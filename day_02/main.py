@@ -15,12 +15,10 @@ for report in data:
             diff = level - report[i + 1]
             diff_list.append(diff)
 
-    if all(x > 0 for x in diff_list):  # Decreasing
-        if all((x >= 1) and (x <= 3) for x in diff_list):  # Safe
-            safe_count += 1
+    if all((x >= 1) and (x <= 3) for x in diff_list):  # Safe
+        safe_count += 1
 
-    if all(x < 0 for x in diff_list):  # Increasing
-        if all((x <= -1) and (x >= -3) for x in diff_list):  # Safe
-            safe_count += 1
+    if all((x <= -1) and (x >= -3) for x in diff_list):  # Safe
+        safe_count += 1
 
 print(safe_count)
